@@ -1,3 +1,4 @@
+import org.alexvsi.challenge.poo.domain.Content;
 import org.alexvsi.challenge.poo.domain.Course;
 import org.alexvsi.challenge.poo.domain.Mentoring;
 
@@ -48,5 +49,8 @@ public class Main {
         date = LocalDate.parse("2026-04-16");
 
         Mentoring mentoria2 = new Mentoring(title, description, date);
+
+        System.out.println(mentoria1);
+        System.out.println(mentoria2);
     }
 }
