@@ -11,8 +11,8 @@ public class Mentoring extends Content{
     }
 
     @Override
-    public float calculateXP() {
-        return defaultXP + 20f;
+    public double calculateXP() {
+        return defaultXP + 20;
     }
 
     public LocalDate getDate() {

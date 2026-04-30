@@ -1,5 +1,6 @@
-import org.alexvsi.challenge.poo.domain.Content;
+import org.alexvsi.challenge.poo.domain.Bootcamp;
 import org.alexvsi.challenge.poo.domain.Course;
+import org.alexvsi.challenge.poo.domain.Dev;
 import org.alexvsi.challenge.poo.domain.Mentoring;
 
 import java.time.LocalDate;
@@ -14,29 +15,29 @@ public class Main {
         int load;
         LocalDate date;
 
-        title = "Java Bootcamp";
-        description = "Java Bootcamp by Digital Innovation One";
-        load = 70;
+        title = "Programming Logic";
+        description = "by Digital Innovation One";
+        load = 8;
 
         // Não instanciar um objeto sem valor
-        Course javaCourse = new Course(title, description, load);
+        Course programmingLogic = new Course(title, description, load);
 
         //javaCourse.setTitle("Java Bootcamp");
         //javaCourse.setDescription("Java Bootcamp by Digital Innovation One");
         //javaCourse.setCourseLoad(70);
 
-        title = "AI-powered Game Development";
-        description = "Game Development by SoulCode Academy";
-        load = 240;
+        title = "Spring Boot Framework";
+        description = "by Digital Innovation One";
+        load = 12;
 
-        Course gameDevCourse = new Course(title, description, load);
+        Course springBoot = new Course(title, description, load);
 
         //gameDevCourse.setTitle("AI-powered Game Development");
         //gameDevCourse.setDescription("Game Development by SoulCode Academy");
         //gameDevCourse.setCourseLoad(240);
 
-        System.out.println(javaCourse);
-        System.out.println(gameDevCourse);
+        //System.out.println(ProgrammingLogic);
+        //System.out.println(SpringBoot);
 
         title = "Boas Práticas de Desenvolvimento em Java no mundo Real";
         description = "Mentoria DIO com Lorem Ipsum";
@@ -50,7 +51,32 @@ public class Main {
 
         Mentoring mentoria2 = new Mentoring(title, description, date);
 
-        System.out.println(mentoria1);
-        System.out.println(mentoria2);
+        //System.out.println(mentoria1);
+        //System.out.println(mentoria2);
+
+        title = "Java Bootcamp";
+        description = "Java Bootcamp by Digital Innovation One";
+        Bootcamp JavaBootcamp = new Bootcamp(title, description);
+        JavaBootcamp.getContents().add(programmingLogic);
+        JavaBootcamp.getContents().add(springBoot);
+        JavaBootcamp.getContents().add(mentoria1);
+        JavaBootcamp.getContents().add(mentoria2);
+
+        Dev devDravls = new Dev("Vinicius");
+        devDravls.subscribeBootcamp(JavaBootcamp);
+        devDravls.progress();
+        System.out.println("\nDravls dev => " +  devDravls.getName());
+        System.out.println("Conteúdos inscritos: " + devDravls.getSubscribedContent());
+        System.out.println("Conteúdos concluidos: " + devDravls.getCompletedContent());
+        System.out.println("XP: " + devDravls.calculateXP());
+
+        Dev devGroner = new Dev("LGroner");
+        devGroner.subscribeBootcamp(JavaBootcamp);
+        devGroner.progress();
+        devGroner.progress();
+        System.out.println("\nGroner dev => " + devGroner.getName());
+        System.out.println("Conteúdos inscritos: " + devGroner.getSubscribedContent());
+        System.out.println("Conteúdos concluidos: " + devGroner.getCompletedContent());
+        System.out.println("XP: " + devGroner.calculateXP());
     }
 }

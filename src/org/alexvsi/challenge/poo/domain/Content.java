@@ -27,5 +27,5 @@ public abstract class Content {
         this.description = description;
     }
 
-    public abstract float calculateXP();
+    public abstract double calculateXP();
 }

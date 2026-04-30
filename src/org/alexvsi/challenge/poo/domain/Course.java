@@ -9,7 +9,7 @@ public class Course extends Content{
     }
 
     @Override
-    public float calculateXP() {
+    public double calculateXP() {
         return defaultXP * courseLoad;
     }
 
